@@ -7,7 +7,7 @@ const Timetable = () => {
   const [teachers, setTeachers] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/timetables/")
+    fetch("https://school-timetable-management.vercel.app/api/timetables/")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -16,7 +16,7 @@ const Timetable = () => {
       })
       .catch((error) => console.error("Error fetching timetable:", error));
 
-    fetch("http://127.0.0.1:8000/api/teachers/") // Fetch teachers list
+    fetch("https://school-timetable-management.vercel.app/api/teachers/") // Fetch teachers list
       .then((response) => response.json())
       .then((data) => setTeachers(data))
       .catch((error) => console.error("Error fetching teachers:", error));

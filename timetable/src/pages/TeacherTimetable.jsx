@@ -41,7 +41,7 @@ const TeacherTimetable = () => {
 
   // Fetch teachers
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/teachers/")
+    fetch("https://school-timetable-management.vercel.app/api/teachers/")
       .then((response) => response.json())
       .then((data) =>{ setTeachers(data);
         setSelectedTeacher(data[0].id)
@@ -52,7 +52,7 @@ const TeacherTimetable = () => {
   // Fetch timetable for selected teacher
   useEffect(() => {
     if (selectedTeacher) {
-      fetch(`http://127.0.0.1:8000/api/timetable/teacher/${selectedTeacher}/`)
+      fetch(`https://school-timetable-management.vercel.app/api/timetable/teacher/${selectedTeacher}/`)
         .then((response) => response.json())
         .then((data) => {
           const formattedTimetable = {};
